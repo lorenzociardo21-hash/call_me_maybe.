@@ -96,7 +96,7 @@ def ai_name(
 
     while True:
         logits = ai.get_logits_from_input_ids(prompt_ids)
-
+        print(logits)
         for x in range(len(logits)):
             if x not in token_permessi:
                 logits[x] = float('-inf')

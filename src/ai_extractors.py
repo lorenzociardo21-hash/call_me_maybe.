@@ -101,11 +101,9 @@ def extrat_num(
             for x in range(len(logits)):
                 if x not in token_permessi:
                     logits[x] = float('-inf')
-
         nuovo_token = int(np.argmax(logits))
         risposta_generata.append(nuovo_token)
         frase_prompt_ids.append(nuovo_token)
-
         ultimo_char = ai.decode([risposta_generata[-1]])
         if ultimo_char in [" ", "\n"] and len(risposta_generata) > 0:
             break
